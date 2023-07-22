@@ -1,0 +1,9 @@
+<div>
+  <p>Title:<%= @book.title %></p>
+  <p>Body:<%= @book.body %></p>
+  <p>User:<%= image_tag 'sample-author1.jpg' %></p>
+  <p>name:<%= @book.user.name %> </p>
+  <% if @book.user == current_user %>
+    <%= link_to "Destroy", book_path(@book), method: :delete %>
+  <% end %>
+</div>
