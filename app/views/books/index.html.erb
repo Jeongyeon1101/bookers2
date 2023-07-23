@@ -8,3 +8,6 @@
     <p>name:<%= book.user.name %> </p>
   </div>
 <% end %>
+
+<%= render 'users/list', user: @user %>
+<%= render 'list', book: @book %>
