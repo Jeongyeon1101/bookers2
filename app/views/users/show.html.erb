@@ -1,16 +1,17 @@
 <div>
   <h2>User info</h2>
   <%= image_tag @user.get_profile_image(100,100) %>
-  <p><%= @user.name %></p>
-  <p><%= @user.introduction %></p>
+  <p>Name:<%= @user.name %></p>
+  <p>Introduction:<%= @user.introduction %></p>
+  <p><%= link_to "プロフィール編集", edit_user_path %></p>
 </div>
 
 <h2>Books</h2>
 <% @books.each do |book| %>
 <div>
   <%= link_to books_path(book.id) do %>
-    <p>Title<%= book.title %></p>
+    <p>Title:<%= book.title %></p>
   <% end %>
-  <p>Opinion<%= book.body %></p>
+  <p>Opinion:<%= book.body %></p>
 </div>
 <% end %>
