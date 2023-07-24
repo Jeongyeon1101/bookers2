@@ -4,6 +4,7 @@
   <p>User:<%= image_tag @book.user.get_profile_image(100,100) %></p>
   <p>name:<%= @book.user.name %> </p>
   <% if @book.user == current_user %>
+    <%= link_to "Edit", edit_book_path(@book) %>
     <%= link_to "Destroy", book_path(@book), method: :delete %>
   <% end %>
 </div>
