@@ -3,14 +3,20 @@ class BooksController < ApplicationController
   def index
     @books = Book.all
     @user = current_user
-    @book = Book.new
+    @book_list = Book.new
   end
 
   def create
-    @book = Book.new(book_params)
-    @book.user_id = current_user.id
-    @book.save
-    redirect_to books_path
+    @book_list = Book.new(book_params)
+    @book_list.user_id = current_user.id
+    if @book_list.save
+      redirect_to book_path(@book_list.id)
+    else
+      @books = Book.all
+      @user = current_user
+      @book_list = Book.new
+      render :index
+    end
   end
 
   def show
