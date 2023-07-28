@@ -11,9 +11,9 @@
 
 <div>
 <%= form_with model: @book do |f| %>
-  <p>Title</p>
+  <p>本のタイトル</p>
   <%= f.text_field :title %>
-  <p>Opinion</p>
+  <p>感想</p>
   <%= f.text_area :body %>
   <%= f.submit 'Update Book' %>
 <% end %>

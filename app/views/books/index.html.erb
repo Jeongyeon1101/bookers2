@@ -1,5 +1,5 @@
 <% if @book_list.errors.any? %>
-  <%= @book_list.errors.count %>errors prohibited this obj from being saved:
+  <h3><%= @book_list.errors.count %>errors prohibited this obj from being saved:</h3>
   <ul>
     <% @book_list.errors.full_messages.each do |message| %>
       <li><%= message %></li>
@@ -15,9 +15,9 @@
       <p><%= image_tag book.user.get_profile_image(100,100) %></p>
     <% end %>
     <%= link_to book_path(book.id) do %>
-      <p>Title:<%= book.title %></p>
+      <p>本のタイトル:<%= book.title %></p>
     <% end %>
-    <p>Opinion:<%= book.body %></p>
+    <p>感想:<%= book.body %></p>
   </div>
 <% end %>
 
